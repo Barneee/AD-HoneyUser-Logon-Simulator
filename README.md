@@ -5,6 +5,8 @@ AD-HoneyUser-Logon-Simulator is a PowerShell script that simulates logon activit
 
 ![AD-User-Attributes](ad-user-attributes.jpg)
 
+## Warning
+Please note that honeypot users do not need the permission to successfully execute the Invoke-Command for attributes like lastLogon or lastBadPasswordAttempt to be updated. These attributes are modified as soon as the Kerberos ticket-granting process (krbtgt) occurs, even if the subsequent command execution fails.
 
 ## Features
 - Simulates both successful and failed logon attempts for honeypot accounts via kerberos authentication.
@@ -23,3 +25,5 @@ The script performs the following actions:
 2. Customize the configuration variables (e.g., domain name, honeypot users).
 3. Configure a scheduled task to run the script.
 4. Verifiy by checking the log file and user attributes if it works as it should.
+
+
